@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>myschedule</title>
+    <link rel="stylesheet" type="text/css" href="static/css/map.css"/>
+</head>
+<body>
+	<div class="nav">
+        <a href="myschedule.html">My Schedule</a>
+        <a href="forminput.html">Form Input</a>
+        <a href="aboutme.html">About Me</a>
+        <a href="stock.html">My Stock</a>
+    </div>
+    <div class="header-container">
+        <h1>My Schedule</h1>
+    </div>
+    <div class="container">
+        <div class="table-container">
+            <table style="width:100%">
+                <tr>
+                    <th>Day of the Week</th>
+                    <th>Event</th>
+                    <th>Time</th>
+                    <th>Location</th>
+                    <th>URL</th>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>5115 User Interface Class</td>
+                    <td>9:45-11 AM</td>
+                    <td>222 Pleasant St SE, Minneapolis, MN 55455
+                        <img src="static/img/Bruininks.jpg" alt="Bruinicks" width="50" height="50">
+                    </td>
+                    <td><a href="https://canvas.umn.edu/courses/502640">https://canvas.umn.edu/courses/502640</a></td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>3023 Macro Econ Class</td>
+                    <td>9:45-11 AM</td>
+                    <td>257 S 19th Ave, Minneapolis, MN 55455
+                        <img src="static/img/Anderson.jpg" alt="Anderson" width="50" height="50">
+                    </td>
+                    <td><a href="https://canvas.umn.edu/courses/479041">https://canvas.umn.edu/courses/479041</a></td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>4131 Internet Programming Class</td>
+                    <td>11:15-12:30 PM</td>
+                    <td>257 S 19th Ave, Minneapolis, MN 55455
+                        <img src="static/img/Anderson.jpg" alt="Anderson" width="50" height="50">
+                    </td>
+                    <td><a href="https://canvas.umn.edu/courses/482763">https://canvas.umn.edu/courses/482763</a></td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>Workout at Rec</td>
+                    <td>5:30-6:30 PM</td>
+                    <td>123 SE Harvard St, Minneapolis, MN 55455
+                        <img src="static/img/rec.jpg" alt="rec" width="50" height="50">
+                    </td>
+                    <td><a href="https://recwell.umn.edu/">https://recwell.umn.edu/</a></td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>4511W AI Class</td>
+                    <td>11:15-12:05 PM</td>
+                    <td>200 Union St SE, Minneapolis, MN 55455
+                        <img src="static/img/keller.jpg" alt="keller" width="50" height="50">
+                    </td>
+                    <td><a href="https://canvas.umn.edu/courses/483112">https://canvas.umn.edu/courses/483112</a></td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>Hockey</td>
+                    <td>6-7:30 PM</td>
+                    <td>901 15th Ave SE, Minneapolis, MN 55414
+                        <img src="static/img/vanCleve.jpg" alt="vanCleve" width="50" height="50">
+                    </td>
+                    <td><a href="https://www.minneapolisparks.org/parks-destinations/parks-lakes/van_cleve_park/">https://www.minneapolisparks.org/parks-destinations/parks-lakes/van_cleve_park/</a></td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>Breakfast at Al's</td>
+                    <td>7-8:00 AM</td>
+                    <td>413 14th Ave SE, Minneapolis, MN 55414
+                        <img src="static/img/Als.png" alt="Als" width="50" height="50">
+                    </td>
+                    <td><a href="https://www.alsbreakfastmpls.com/">https://www.alsbreakfastmpls.com/</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="image-container">
+            <img id="large-image" src="static/img/gophers-mascot.png" alt="Large Image" width="500" height="400">
+        </div>
+    </div>
+    <div class="slideshow-container">
+        <div class="slideshow-controls">
+            <button id="start-slideshow">Start Slideshow</button>
+            <button id="end-slideshow">End Slideshow</button>
+        </div>
+    </div>
+    <div class="map-container">
+        <div id="mapDirections"></div>
+        <div id="map"></div>
+        <div id="directionsPanel">
+            <h3>Directions to</h3>
+            <input type="text" id="destination" placeholder="Enter destination" />
+            
+            <h4>by</h4>
+            <input type="radio" name="travelMode" value="walking" checked> Walking
+            <input type="radio" name="travelMode" value="driving"> Driving
+            <input type="radio" name="travelMode" value="transit"> Transit
+            <br>
+            <br>
+            <button id="goButton">Go</button>
+
+            <h3>Find</h3>
+            <select id="categorySelect">
+                <option value="restaurant">Restaurant</option>
+                <option value="coffeeShop">Coffee Shop</option>
+                <option value="bookstore">Bookstore</option>
+                <option value="supermarket">Supermarket</option>
+                <option value="parking">Parking</option>
+                <option value="other">Other</option>
+            </select>
+            <br>
+            <br>
+            <input id="otherSearch" type="text" placeholder="Enter place name" />
+            <br>
+            <br>
+            <label for="distanceInput">Distance (meters):</label>
+            <input id="distanceInput" type="number" min="0" step="1" style="width: 50px;" placeholder="Enter distance" value="500" />
+            <br>
+            <br>
+            <button id="searchButton">Search</button>
+            <div id="directionsResults"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="static/js/map.js"></script> 
+</body>
+</html>
