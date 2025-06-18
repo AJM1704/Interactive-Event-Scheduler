@@ -4,7 +4,6 @@
 - **Geolocation + Directions** functionality.
 - **Slideshow** with image transitions.
 - A **new stock.html page** that fetches real-time stock quotes using the [Alpha Vantage API](https://www.alphavantage.co).
-- Optional bonus feature: **Nearby place search** using Google Places.
 
 ---
 
